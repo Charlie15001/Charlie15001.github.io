@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+body::before {
+    display: block;
+    content: '';
+    height: 60px;
+}
+
+@media(min-width: 768px) {
+    .news-input {
+        width: 50%;
+    }
+}
+
+@font-face {
+    font-family: 'GenRyuMin-SB';
+    src: url(fonts/GenRyuMin-SB.ttc);
+}
+
+@font-face {
+    font-family: 'GenRyuMin-R';
+    src: url(fonts/GenRyuMin-R.ttc);
+}
+
+h1, h2 {
+    font-family: 'Source Sans Pro';
+}
+
+h3, h4 {
+    font-family: 'GenRyuMin-SB';
+}
+
+p {
+    font-family: 'GenRyuMin-R';
+}
+
+/*Add horizontal line between sections*/
+.divided {
+    display: flex;
+    align-items: center;
+  }
+  
+  .divider {
+    flex-grow: 1;
+    border-bottom: 4px solid #3D3255;
+  }
+
+.card {
+    display: flex;
+    /*水平置中*/
+    justify-content: center;
+}
+
+.box {
+    align-content: center;
+    /*width: 375px;*/
+    overflow: hidden;
+}
+
+.modal-box {
+    align-content: center;
+    overflow: hidden;
+}
+
+img {
+    transition: .5s;
+}
+
+.box:hover img {
+    transform: scale(1.1);
+}
+
+.cover-fit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}

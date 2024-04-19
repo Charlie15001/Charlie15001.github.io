@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+  <!-- True Type Fonts-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>This is Charlie's Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- My stylesheet-->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <style>
+    /* 嵌入字型設定 */
+    @font-face {
+        font-family: 'jf';
+        src: url("fonts/jf-openhuninn-1.1.ttf") format('truetype');
+    }
+
+    @font-face {
+        font-family: 'GenRyuMin-B';
+        src: url("fonts/GenRyuMin-B.ttc") format("truetype");
+    }
+
+    a {
+        text-decoration: none;
+    }
+  </style>
+  <style type="text/css">
+    .label {
+    position: absolute;
+    right: 490px;
+    top: 195px;
+    height: 50px;
+    width: 150px;
+    background-color: rgb(255, 255, 255, 0.75);
+    border-radius: 8px;
+    z-index: 2;
+    }
+
+    .label-text {
+        position: absolute;
+        right: 450px;
+        top: 200px;
+        font-family: 'GenRyuMin-SB';
+        color: white;
+        background-color: rgb(255, 255, 255, 0);
+        z-index: 3;
+    }
+
+    .datetime-date {
+        position: absolute; 
+        bottom: 10px; 
+        left: 10px; 
+        font-size: 28px;
+    }
+
+    .datetime-month {
+        position: absolute; 
+        bottom: 25px; 
+        left: 80px; 
+        font-size: 14px;
+    }
+
+    .datetime-year {
+        position: absolute; 
+        bottom: 10px; 
+        left: 80px; 
+        font-size: 14px;
+    }
+  </style>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#3D3255">
+        <div class="container">
+            <a href="#" class="navbar-brand" style="font-size: 36px; font-family:'Noto Sans TC', sans-serif; font-weight: 600;">
+                <h1 style="font-weight: 800;">Charlie's Website</h1>
+            </a>
+            <button 
+                class="navbar-toggler" 
+                type="button"
+                data-bs-toggle="collaspe" 
+                data-bs-target="#navmenu"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collaspe navbar-collapse" id="navmenu">
+                <!--ms-auto-->
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#aboutme" class="nav-link">About Me</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" 
+                            aria-expanded="false">
+                            My Projects
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" 
+                            style="background-color: rgb(255, 255, 255, 0.75);">
+                            <li><a class="dropdown-item" href="#project01" style="font-family: GenRyuMin-R;">青銀丼起來，移居到未來</a></li>
+                            <li><a class="dropdown-item" href="#project02" style="font-family: GenRyuMin-R;">眷鳥歸巢社會住宅空間規劃</a></li>
+                            <li><a class="dropdown-item" href="#project03" style="font-family: GenRyuMin-R;">亞太區虛擬實境產業聚落</a></li>
+                            <li><a class="dropdown-item" href="#project01" style="font-family: GenRyuMin-R;">Youbike資料診斷都市機能</a></li>
+                            <li><a class="dropdown-item" href="#project02" style="font-family: GenRyuMin-R;">LALALANE文藝街區開發案</a></li>
+                            <li><a class="dropdown-item" href="#project03" style="font-family: GenRyuMin-R;">VIRBAN PLANNING</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#workexperiences" class="nav-link">Work Experiences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contactinfo" class="nav-link">Contact Info</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </nav>
+
+    <!-- About Me -->
+    <section id="aboutme" class="p-5 text-left" style="background-color: #E9C6C1;">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-md p-5">
+                        <h1 style="font-weight: 800;">Hi, I'm PEI-YU LIN</h1>
+                        <p class="lead">
+                            <h3 style="font-family: GenRyuMin-SB;">都市計畫的人文關懷，空間資訊的理性分析</h3>
+                        </p>
+                        <h4>學習都市發展基礎理論，培養觀察空間的敏銳感覺</h4>
+                        <p style="font-size: 20px">
+                            我是林培宇，由於對空間資訊的興趣而就讀成功大學都市計劃學系，目前則就讀於台灣大學土木工程學系測量組。都市計畫課程著重於都市計畫基礎理論、都市設計美感培養與空間尺度感覺的建立。
+                        </p>
+                        <br/>
+                        <h4>學習地理資訊系統，思考如何將科技運用於都市規劃</h4>
+                        <p style="font-size: 20px">
+                            在接觸計算機概論與地理資訊系統後，我開始思考如何將數據分析應用在都市規劃領域。在台中市都發局的實習過程中，與系上學長姐的對話開啟我選擇就讀測量領域的契機。
+                        </p>
+                        <br/>
+                        <h4>鑽研空間資訊領域，接觸3S技術與機器學習演算法</h4>
+                        <p style="font-size: 20px">
+                            在成大測量系的輔系過程中，選修衛星定位課程讓我了解衛星定位不只應用於車機導航，在科學研究領域與都市防災規劃都擁有極高的重要性，目前也結合機器學習方法應用於我的碩士研究。
+                        </p>
+                        <a href="#myprojects" class="btn mt-3 text-light" style="background-color: #3D3255; font-family: 'GenRyuMin-R';">
+                            <i class="bi bi-chevron-right">繼續閱讀</i>
+                        </a>
+                    </div>
+                    <div class="col-md align-items-center justify-content-between">
+                        <!-- <img class="img-fluid" src="img/aboutme/異人館-01.jpg" alt="my photo" 
+                        style="height: 600px; border-radius: 8px; 
+                        position: absolute; right: 200px; top: 180px; z-index: 1;"> -->
+                        <img class="img-fluid" src="img/aboutme/異人館-01.jpg" alt="my photo" 
+                        style="height: 600px; border-radius: 8px; z-index: 1;">
+                        <!-- <div class="label"></div> -->
+                        <!-- <div class="label-text" style="font-size: 24px;">神戶&bull;風見雞之館</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Newsletter-->
+    <!--
+    <section class="bg-primary text-light p-5 p-lg-0 py-lg-5">
+        <div class="container">
+            <div class="d-md-flex justify-content-between align-items-center">
+                <h3 class="mb-3 mb-md-0">Sign up for our newsletter</h3>
+                <div class="input-group news-input">
+                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-dark btn-lg" type="button">Button</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <div class="divided" style="background-color: #E9C6C1;">
+        <span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+        <span class="divider"></span>
+        <span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+    </div>
+
+    <!-- My Projects -->
+    <section id="myprojects" style="background-color: #E9C6C1">
+        <div class="section p-5">
+            <div class="container">
+                <!-- class="row" grid system -->
+                <div class="row text-center g-4">
+                    <h1 style="font-family: Source Sans Pro; font-weight: 600;">My Projects</h1>
+                    <div class="col-md">
+                        <div id="project01" class="card text-light" style="background-color:#3D3255">
+                            <div class="card-body text-center">
+                                <div class="h1 mb-3">
+                                    <div class="box mx-auto" style="position: relative;">
+                                        <img src="img/myprojects/低密度住宅看納骨塔.bmp" alt="project01" class="cover-fit" style="z-index: -1;">
+                                        <div class="datetime" style="font-family: GenRyuMin-SB;">
+                                            <span class="datetime-date">01日|</span>
+                                            <span class="datetime-month">05月</span>
+                                            <span class="datetime-year">2019年</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="card-title mb-3" style="font-family: GenRyuMin-SB;">
+                                    青銀丼起來，移居到未來
+                                </h3>
+                                <p class="card-text" style="font-family: GenRyuMin-R;">
+                                    為提高整體都市運輸效率，將行人路權移至高架路段。空中綠廊不僅能串連計畫範圍內的公園綠地系統，也為開放空間不足的現況帶來新的轉機。
+                                </p>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn" style="background-color: #E4988F; font-family: 'GenRyuMin-R';"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-title="青銀丼起來，移居到未來"
+                                    data-bs-bodytext="計畫範圍內因眷村搬遷、二王公墓搬遷後擁有多處待開闢且產權單純之公有土地，又位居永康區連接東區的門戶地區，適合做為未來城市的實驗場域。本計畫欲促進開放空間系統的開闢與串聯、建立防災生活圈及加強公共工程生態意識，並因應規劃管理與基礎建設兩大面向的智慧化，建立交通地下化、人行空間高架化等垂直發展之土地使用型態，營造符合未來趨勢的新興城市。丼字取自計畫範圍路網結構的意象，中間一點代表計畫面臨的課題，也是對於未來的展望。">
+                                    閱讀更多
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div id="project02" class="card text-light" style="background-color: #E4988F">
+                            <div class="card-body text-center">
+                                <div class="h1 mb-3">
+                                    <div class="box mx-auto" style="position: relative;">
+                                        <img src="img/myprojects/2.jpg" alt="project04" class="cover-fit">
+                                        <div class="datetime" style="font-family: GenRyuMin-SB;">
+                                            <span class="datetime-date">20日|</span>
+                                            <span class="datetime-month">05月</span>
+                                            <span class="datetime-year">2020年</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="card-title mb-3" style="font-family: GenRyuMin-SB;">
+                                    眷鳥歸巢社會住宅空間規劃
+                                </h3>
+                                <p class="card-text" style="font-family: GenRyuMin-R;">
+                                    眷村與一般住宅社區最大的不同就在於公共空間的定義以及私密空間的過渡性。透過重塑彼此間的空間，重新建立入住者之間的情感鏈結。
+                                </p>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn text-light" style="background-color: #3D3255; font-family: 'GenRyuMin-R';"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-title="眷鳥歸巢社會住宅空間規劃"
+                                    data-bs-bodytext="二空新村最初由福州撤退至台南空軍基地的官兵所建，目前多數房舍已經遭到拆除，僅留有少數幾間舊有房舍以及當時的防空塔遺跡。眷村與一般住宅社區最大的差異即是對於公共空間的定義與私密空間的過渡性。有時私人生活會延伸至公領域，公共生活有時又會進入私領域中，讓眷村中形成許多連結。這些連結使得居民打破彼此間的藩籬，形成一個整體，彼此以我們相稱。透過縮小居住空間並釋放至公共空間，我們期望再現眷村公私融合的多層次空間，讓彼此能重新鏈結現代人公私分明所引發的情感斷層，從而建立緊密的關係網絡。">
+                                    閱讀更多
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div id="project03" class="card text-light" style="background-color: #3D3255;">
+                            <div class="card-body text-center">
+                                <div class="h1 mb-3">
+                                    <div class="box mx-auto" style="position: relative;">
+                                        <img src="img/myprojects/封面圖.jpg" alt="project02" class="cover-fit">
+                                        <div class="datetime" style="font-family: GenRyuMin-SB;">
+                                            <span class="datetime-date">10日|</span>
+                                            <span class="datetime-month">06月</span>
+                                            <span class="datetime-year">2020年</span>
+                                        </div>
+                                    </div>
+                                    <!--<i class="bi bi-person-square"></i>-->
+                                </div>
+                                <h3 class="card-title mb-3" style="font-family: GenRyuMin-SB;">
+                                    亞太區虛擬實境產業聚落
+                                </h3>
+                                <p class="card-text" style="font-family: GenRyuMin-R;">
+                                    利用分期分區計畫健全體感產業鏈，並結合虛擬實境科技打造國內第一座從研發製造、產品服務到銷售營運一體而成的複合園區。
+                                </p>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn" style="background-color: #E4988F; font-family: 'GenRyuMin-R';"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-title="亞太區虛擬實境產業聚落"
+                                    data-bs-bodytext="台灣塑膠工業股份有限公司(台塑)成立於民國43年，目前旗下事業橫跨塑膠、石化、電子、生物科技、醫療等多項領域。自70年代起環保意識抬頭，台塑位於戲獅甲工業區的工廠也面臨轉型危機，103年拆除後改建為公園。88年公告之擬定高雄市多功能經貿園區特定區計畫將工業區變更為特定經貿核心專用區，原本的工業區土地應如何呈現新的活動樣貌，並帶動整體亞洲新灣區的整體經濟發展，是目前台塑與其他鄰近的石化產業所需要積極思考與處理的問題。">
+                                    閱讀更多
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- newline -->
+                    <div class="w-100"></div>
+                    
+                    <div class="col-md">
+                        <div id="project04" class="card text-light" style="background-color: #E4988F;">
+                            <div class="card-body text-center">
+                                <div class="h1 mb-3">
+                                    <div class="box mx-auto" style="position: relative;">
+                                        <img src="img/myprojects/634310-01.jpg" alt="project05" class="cover-fit">
+                                        <div class="datetime" style="font-family: GenRyuMin-SB;">
+                                            <span class="datetime-date">24日|</span>
+                                            <span class="datetime-month">04月</span>
+                                            <span class="datetime-year">2021年</span>
+                                        </div>
+                                    </div>
+                                    <!--<i class="bi bi-person-square"></i>-->
+                                </div>
+                                <h3 class="card-title mb-3" style="font-family: GenRyuMin-SB;">
+                                    Youbike資料診斷都市機能
+                                </h3>
+                                <p class="card-text" style="font-family: GenRyuMin-R;">
+                                    公共自行車作為都市中的一種運具選擇，其行為與周圍土地使用有相當大的關聯性。研究成果說明地理加權迴歸係數值與都市空間結構之關係。
+                                </p>
+                                <button type="button" class="btn text-light" style="background-color: #3D3255; font-family: 'GenRyuMin-R';"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-title="Youbike資料診斷都市機能"
+                                    data-bs-bodytext="近10年來綠色低碳運輸與智慧運輸逐漸成為都市發展的主要概念之一，應運而生的是公共運輸系統的建置，這其中也包含了公共自行車租借系統的普及。公共自行車系統作為都市中的一種運具選擇，其使用行為與周圍土地使用有相當大的關連性。為使租借站的設置發揮最大效益，必須深入探討影響使用量之重要因素。主要的分析方法為地理加權迴歸模式與貝氏分析，用以描述公共自行車使用兩與環境因素之間的關係。經校估後發現重要的影響變數包含建物密度、人行道密度、租借站至捷運站距離以及租借站服務範圍內人口數。">
+                                    閱讀更多
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div id="project05" class="card text-light" style="background-color:#3D3255">
+                            <div class="card-body text-center">
+                                <div class="h1 mb-3">
+                                    <div class="box mx-auto" style="position: relative;">
+                                        <img src="img/myprojects/大圖換圖_210622.jpg" alt="project03" class="cover-fit">
+                                        <div class="datetime" style="font-family: GenRyuMin-SB;">
+                                            <span class="datetime-date">14日|</span>
+                                            <span class="datetime-month">05月</span>
+                                            <span class="datetime-year">2021年</span>
+                                        </div>
+                                    </div>
+                                    <!--<i class="bi bi-people"></i>-->
+                                </div>
+                                <h3 class="card-title mb-3" style="font-family: GenRyuMin-SB;">
+                                    LALALANE文藝街區開發案
+                                </h3>
+                                <p class="card-text" style="font-family: GenRyuMin-R;">
+                                    為維護基地周圍的寧適性，本計畫提出巷弄生活宅、藝文展演空間與小型商業設施的開發願景，使新復興紡織廠再次成為凝聚情感的重要場域。
+                                </p>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn" style="background-color: #E4988F; font-family: 'GenRyuMin-R';"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-title="LALALANE文藝街區開發案"
+                                    data-bs-bodytext="經過實地踏查，計畫範西側臨海安路商圈、東側臨赤崁商圈，是一個同時具備商業潛力與住宅寧適性的基地。基地周邊的巷道可分為居住型、商業型與藝文型三種巷道類型。基地內部還有一個新復興紡織廠的舊廠房，是過去紡織業發達時居民凝聚情感活動的重要場域。為維護居住寧適性，並適當引入周邊商圈觀光人潮以提升地區之吸引力，本案提出巷弄生活宅、藝文展演空間與小型商業設施的開發願景，活化舊紡織廠房的同時創造新建物與台南巷弄生活的共存模式。">
+                                    閱讀更多
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div id="project06" class="card text-light" style="background-color:#E4988F">
+                            <div class="card-body text-center">
+                                <div class="h1 mb-3">
+                                    <div class="box mx-auto" style="position: relative;">
+                                        <img src="img/myprojects/vrar-01.jpg" alt="project03" class="cover-fit">
+                                        <div class="datetime" style="font-family: GenRyuMin-SB;">
+                                            <span class="datetime-date">07日|</span>
+                                            <span class="datetime-month">01月</span>
+                                            <span class="datetime-year">2022年</span>
+                                        </div>
+                                    </div>
+                                    <!--<i class="bi bi-people"></i>-->
+                                </div>
+                                <h3 class="card-title mb-3" style="font-family: GenRyuMin-SB;">
+                                    VIRBAN PLANNING
+                                </h3>
+                                <p class="card-text" style="font-family: GenRyuMin-R;">
+                                    對於城市規劃師而言，與數位模型的互動如果可以突破螢幕的框架，可以在更短的時間內提出對空間的想像，模擬的成果也能更貼近現實。
+                                </p>
+                                <a href="https://youtu.be/eHlHWEWGmNI" class="btn text-light" target="_blank"
+                                    style="background-color: #3D3255; font-family: 'GenRyuMin-R';">
+                                    閱讀更多
+                                </a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divided" style="background-color: #E9C6C1;">
+        <span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+        <span class="divider"></span>
+        <span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span>
+    </div>
+    
+    <!-- Work Experiences -->
+    <section id="workexperiences" class="p-5" style="background-color: #E9C6C1;">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <h1 style="font-family: Source Sans Pro; font-weight: 600;" class="text-center">Work Experiences</h1>
+                <div class="col-md">
+                    <img class="img-fluid w-40" src="img/workexperiences/中央舞台區.jpg" alt="" style="border-radius: 8px;">
+                </div>
+                <div class="col-md p-5">
+                    <h3 style="font-family: GenRyuMin-B;">人文及社會科學知識跨界應用能力培育計畫</h3>
+                    <p class="lead" style="font-family: GenRyuMin-SB;">
+                        鼓勵大學體系的人文社會領域學生走出教室發揮所長，在地方建構實作模擬場域，創造大學與地方共生的可能性
+                    </p>
+                    <ul style="font-family: GenRyuMin-R;">
+                        <li>計畫團隊成員約有10人左右，主要工作包含接洽參與計畫的大專院校，以及定期舉辦計畫之成果展</li>
+                        <li>除了參與展覽規劃會議外，也常負責平面圖或是場地模擬圖的製作</li>
+                        <li>精進<strong>SketchUp</strong>建模軟體，還因應工作需求學習<strong>AutoCAD</strong>以及渲染軟體<strong>V-ray</strong></li>
+                    </ul>
+                    <!-- <a href="#" class="btn btn-dark mt-3">
+                        <i class="bi bi-chevron-right">Read More</i>
+                    </a> -->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn text-light" style="background-color: #3D3255; font-family: 'GenRyuMin-R';"
+                        data-bs-toggle="modal" data-bs-target="#ExpModal" data-bs-title="配合國土規劃推動農地資源規劃"
+                        data-bs-bodytext="">
+                        閱讀更多
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="learn" class="p-5 text-light" style="background-color: #3D3255;">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md p-5">
+                    <h3 style="font-family: GenRyuMin-B;">配合國土規劃推動農地資源規劃</h3>
+                    <p class="lead" style="font-family: GenRyuMin-SB;">
+                        針對國土計畫所劃設的農業發展地區進行檢討與調整，另配合氣候變遷調適計畫進行嘉義縣農產業空間佈建
+                    </p>
+                    <ul style="font-family: GenRyuMin-R;">
+                        <li>獲得更多機會親身接觸實務上GIS的分析與操作是如何進行，以及第一線規劃者著重的議題分別是哪些面向</li>
+                        <li>操作規劃案的過程中，覺得現在的空間規劃仍有些過於主觀且缺乏量化數據，偏離理性規劃的本意</li>
+                        <li>想精進自己的<strong>空間分析能力</strong>，並透過更有說服力與<strong>科學根據</strong>的分析方式來了解自己所生長的土地</li>
+                    </ul>
+                    <!-- <a href="#" class="btn btn-light mt-3">
+                        <i class="bi bi-chevron-right">Read More</i>
+                    </a> -->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn" style="background-color: #E4988F; font-family: 'GenRyuMin-R';"
+                        data-bs-toggle="modal" data-bs-target="#ExpModal" data-bs-title="配合國土規劃推動農地資源規劃"
+                        data-bs-bodytext="">
+                        閱讀更多
+                    </button>
+                </div>
+                <div class="col-md">
+                    <img class="img-fluid w-40" src="img/workexperiences/總計+災害類型.jpg" alt="" style="border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Instructors -->
+    <!-- <section id="instructors" class="p-5 bg-primary">
+        <div class="container">
+            <h2 class="text-center text-white">Our Instructors</h2>
+            <p class="lead text-center text-white mb-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, reiciendis.
+            </p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light text-center">
+                        <img src="https://randomuser.me/api/portraits/men/11.jpg" class="rounded-circle mb-3" alt="">
+                        <h3 class="card-title mb-3">Charlie</h3>
+                        <p class="card-text"></p>
+                        <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light text-center">
+                        <img src="https://randomuser.me/api/portraits/men/12.jpg" class="rounded-circle mb-3" alt="">
+                        <h3 class="card-title mb-3">Charlie</h3>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sint blanditiis mollitia rem, eos commodi!
+                        </p>
+                        <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light text-center">
+                        <img src="https://randomuser.me/api/portraits/women/11.jpg" class="rounded-circle mb-3" alt="">
+                        <h3 class="card-title mb-3">Charlie</h3>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sint blanditiis mollitia rem, eos commodi!
+                        </p>
+                        <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light text-center">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="rounded-circle mb-3" alt="">
+                        <h3 class="card-title mb-3">Charlie</h3>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sint blanditiis mollitia rem, eos commodi!
+                        </p>
+                        <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    
+    <!-- Contact & Map -->
+    <section id="contactinfo" class="p-5" style="background-color: #E9C6C1;">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md">
+                    <div class="text-center">
+                        <h1 style="font-family: Source Sans Pro; font-weight: 600;">Contact Info</h1>
+                    </div>
+                    <ul class="list-group list-group-flush lead" style="font-family: Source Sans Pro;">
+                        <li class="list-group-item" style="background-color: #E9C6C1;">
+                            <i class="bi bi bi-house-fill h2" style="color: #3D3255;"></i>
+                            &nbsp;
+                            <span class="fw-bold">Main Location:</span> 
+                            <a href="https://reurl.cc/m3b4oW" target="_blank" style="color: black;">
+                                106台北市大安區羅斯福路四段1號213室
+                            </a>
+                        </li>
+                        <li class="list-group-item" style="background-color: #E9C6C1;">
+                            <i class="bi bi bi-telephone-fill h2" style="color: #3D3255;"></i>
+                            &nbsp;
+                            <span class="fw-bold">Phone Number:</span> 0908827625
+                        </li>
+                        <li class="list-group-item" style="background-color: #E9C6C1;">
+                            <i class="bi bi bi-envelope-fill h2" style="color: #3D3255;"></i>
+                            &nbsp;
+                            <span class="fw-bold">Student Email:</span> r10521809@ntu.edu.tw
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <div id='map' style='width: 400px; height: 300px;'></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="p-2 text-dark text-center position-relative" style="background-color: #E9C6C1;">
+        <div class="container">
+            <p class="lead" style="font-size: 16px;">Copyright &copy; 2022 Charlie Lin</p>
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h1" style="color: #3D3255;"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- Vertically centered scrollable modal -->
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="exampleModalLabel"
+                        style="font-family: GenRyuMin-SB;"
+                    >專案簡介</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-dark">
+                    <!-- <div class="modal-box">
+                        <img src="img/myprojects/基調03.jpg" alt="基調03" class="cover-fit">
+                    </div> -->
+                    <img src="" alt="">
+                    <p style="font-family: GenRyuMin-R; font-size: 20px;"></p>
+                    <!-- <input type="text" class="form-control" id="recipient-name"> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-family: GenRyuMin-R;">
+                        關閉視窗
+                    </button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Work Experiences Modal -->
+    <div class="modal fade" id="ExpModal" tabindex="-1" aria-labelledby="ExpModalLabel" aria-hidden="true">
+        <!-- Vertically centered scrollable modal -->
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="ExpModalLabel"
+                        style="font-family: GenRyuMin-SB;"
+                    >工作內容</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-dark">
+                    <!-- <div class="modal-box">
+                        <img src="img/myprojects/基調03.jpg" alt="基調03" class="cover-fit">
+                    </div> -->
+                    <img src="" alt="">
+                    <p style="font-family: GenRyuMin-R; font-size: 20px;"></p>
+                    <!-- <input type="text" class="form-control" id="recipient-name"> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="font-family: GenRyuMin-R;">
+                        關閉視窗
+                    </button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Varying modal content -->
+    <script>
+        var exampleModal = document.getElementById('exampleModal')
+        exampleModal.addEventListener('show.bs.modal', function (event) {
+        // Button that triggered the modal
+        var button = event.relatedTarget
+        // Extract info from data-bs-* attributes
+        var title = button.getAttribute('data-bs-title')
+        var bodytext = button.getAttribute('data-bs-bodytext')
+        var imagesrc = button.getAttribute('data-bs-src')
+        // If necessary, you could initiate an AJAX request here
+        // and then do the updating in a callback.
+        //
+        // Update the modal's content.
+        var modalTitle = exampleModal.querySelector('.modal-title')
+        var modalBodyInput = exampleModal.querySelector('.modal-body input')
+        var modalBodyText = exampleModal.querySelector('.modal-body p')
+
+        modalTitle.textContent = '專案介紹 | ' + title
+        // modalBodyInput.value = title
+        modalBodyText.textContent = bodytext
+        })
+    </script>
+
+<script>
+    var expModal = document.getElementById('ExpModal')
+    expModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Extract info from data-bs-* attributes
+    var title = button.getAttribute('data-bs-title')
+    var bodytext = button.getAttribute('data-bs-bodytext')
+    var imagesrc = button.getAttribute('data-bs-src')
+    // If necessary, you could initiate an AJAX request here
+    // and then do the updating in a callback.
+    //
+    // Update the modal's content.
+    var modalTitle = expModal.querySelector('.modal-title')
+    var modalBodyInput = expModal.querySelector('.modal-body input')
+    var modalBodyText = expModal.querySelector('.modal-body p')
+
+    modalTitle.textContent = '工作內容 | ' + title
+    // modalBodyInput.value = title
+    modalBodyText.textContent = bodytext
+    })
+</script>
+
+    <!-- <script>
+        $('#myModal').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var title = button.data('title')
+        var overview = button.data('overview')
+        var image = button.data('image')
+        var modal = $(this)
+        modal.find('#title').text('專案介紹 | ' + title)
+        modal.find('#image').attr('src', image)
+        modal.find('#overview').text(overview)
+        })
+    </script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <script>
+        // TO MAKE THE MAP APPEAR YOU MUST
+        // ADD YOUR ACCESS TOKEN FROM
+        // https://account.mapbox.com
+        mapboxgl.accessToken = 'pk.eyJ1IjoiY2hhcmxpZTE1MDAxIiwiYSI6ImNsOGhkcTR0aTBuOWUzdm1sdnJzcHlhNXQifQ.PVfQyFvlGtac88V1Pl929w';
+        const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [121.53805940794435, 25.01871486288947], // starting position [lng, lat]
+        zoom: 15, // starting zoom
+        projection: 'globe' // display the map as a 3D globe
+        });
+        map.on('style.load', () => {
+        map.setFog({}); // Set the default atmosphere style
+        });
+        </script>
+  </body>
+</html>
